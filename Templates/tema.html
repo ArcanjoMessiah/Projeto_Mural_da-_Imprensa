@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="mb-3">{{ tema }}</h1>
+
+    {% for site, headlines in tema_headlines.items() %}
+        <h2 class="mb-3">{{ site }}</h2>
+
+        {% if headlines %}
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                {% for headline in headlines %}
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ headline[1] }}</h5>
+                                <p class="card-text">{{ headline[0] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Não há manchetes para este tema neste site.</p>
+        {% endif %}
+
+        <hr class="my-5">
+    {% endfor %}
+{% endblock %}

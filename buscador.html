@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Buscador</title>
+  </head>
+  <body>
+    <h1>Buscador</h1>
+    <form method="GET" action="/buscar">
+      <input type="text" name="termo">
+      <button type="submit">Buscar</button>
+    </form>
+    {% if resultados %}
+      <h2>Resultados:</h2>
+      <ul>
+        {% for resultado in resultados %}
+          <li>{{ resultado }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </body>
+</html>

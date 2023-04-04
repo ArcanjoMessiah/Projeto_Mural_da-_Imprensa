@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manchetes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        {% for tema in temas %}
+        <div class="card my-3">
+            <div class="card-header">{{ temas[tema] }}</div>
+            <ul class="list-group list-group-flush">
+                {% for source, headlines_site in all_headlines.items() %}
+                {% for headline in headlines_site %}
+                {% if tema.lower() in headline['title'].lower() %}
+                <li class="list-group-item">
+                    <a href="{{ headline['link'] }}">{{ headline['title'] }}</a>
+                    <small class="text-muted">{{ headline['source'] }}</small>
+                    <p class="card-text">{{ headline['summary'] }}</p>
+                </li>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js"></script>
+</body>
+
+</html>
