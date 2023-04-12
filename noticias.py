@@ -8,7 +8,6 @@ sites = [
     {'url': 'https://g1.globo.com/', 'source': 'G1'},
     {'url': 'https://www.correiobraziliense.com.br/', 'source': 'Correio Braziliense'},
     {'url': 'https://www.estadao.com.br/', 'source': 'Estadão'},
-    {'url': 'https://oglobo.globo.com/', 'source': 'O Globo'},
     {'url': 'https://www.jornaldacidadeonline.com.br/', 'source': 'Jornal da Cidade Online'}
 ]
 

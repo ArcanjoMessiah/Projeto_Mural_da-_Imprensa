@@ -23,7 +23,7 @@ $temas = [
 ];
 
 // Definição do intervalo em segundos
-$intervalo = 3600;  // 1 hora
+$intervalo = 1800;  // 30 minutos 
 
 // Função para obter as manchetes de um site
 function get_headlines($site) {
@@ -108,7 +108,9 @@ function update_headlines() {
      
 
     }
+
 }
+
 
 
     ?>
